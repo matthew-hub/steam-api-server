@@ -22,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/matthew-hub/steam-api-server/issues"
   },
-  "homepage": "https://github.com/matthew-hub/steam-api-server#readme"
+  "homepage": "https://github.com/matthew-hub/steam-api-server#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
 }
