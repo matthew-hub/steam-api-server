@@ -1,0 +1,26 @@
+{
+  "name": "steam-api-server",
+  "version": "0.0.9",
+  "description": "the server for \"steam api\" allows you to get data from request",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthew-hub/steam-api-server.git"
+  },
+  "keywords": [
+    "steam",
+    "steam",
+    "api",
+    "api",
+    "server"
+  ],
+  "author": "matthew-hub",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthew-hub/steam-api-server/issues"
+  },
+  "homepage": "https://github.com/matthew-hub/steam-api-server#readme"
+}
