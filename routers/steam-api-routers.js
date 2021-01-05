@@ -22,11 +22,11 @@ module.exports = (app, request, key) => {
     key: `?key=${key}`
   };
 
-  // use express middleware fot cross-domain requests
+  // use express middleware for cross-domain requests
   // access our server from our client browser,
-  // give everyone or specific url
+  // give everyone or specific  domain
   app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:8081'); // '*' = all  or http://your-domain
+    res.header('Access-Control-Allow-Origin', '*'); // '*' = all  or http://your-domain
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
   });
