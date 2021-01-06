@@ -8,14 +8,14 @@ I.E allows Cross Origin Resource Sharing
 >(CORS) is an HTTP-header based mechanism that allows a server to indicate any other origins (domain, scheme, or port) than its own from which a browser should permit loading of resources
 
 ## Installation the Steam API Server
-```github
+```console
   git clone https://github.come/matthew-hub/steam-api-serve.git
 ```
 ####  In the project directory run:
-```github 
+```console 
   npm install
 ```
-```github 
+```console
   node server.js
 ```
 ## How to Use the Server?
@@ -33,7 +33,7 @@ const app = express();
 const port = 8080; // PORT
 const STEAM_API_KEY = 'YOUR STEAM WEB API KEY';
 ```
-5. All API calls are located in the "Routers" folder. Same as below.
+5. All API calls are located in the `"Routers"` folder. Same as below.
 6. It's similar to the Steam Web API, you only use methods and parameters, see below.
 7. Create request on client side.
 
@@ -42,7 +42,7 @@ Steam API Server request:
 `https://{base_url}/steam/{method}/{parameters}`  
 Sample:  
 `http://locahost:8080/steam/GetPlayerSummaries/76561198119402590`
-### Compared
+### Compared to
 Steam Web API request:  
 `https://{base_url}/{interface}/{method}/{version}?{parameters}`  
 Sample:  
@@ -83,4 +83,7 @@ App:
 - `'/steam/GetGlobalAchievementPercentagesForApp/gameid'`
 - `'/steam/GetSchemaForGame/appid'`
 - `'/steam/GetGlobalStatsForGame/appid/?count=1&name='avaiablegamestats'`  
-TIP: use GetSchemaForGame to get availablegamestats
+#####  [*] TIP: use GetSchemaForGame to get availablegamestats
+
+## License
+[MIT](https://github.com/matthew-hub/steam-api-server/blob/main/LICENSE)  ©  Feel free to make any changes.
