@@ -1,6 +1,6 @@
 {
   "name": "steam-api-server",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "the server for \"steam api\" allows you to get data from request",
   "main": "server.js",
   "scripts": {
