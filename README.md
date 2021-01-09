@@ -33,8 +33,8 @@ const app = express();
 const port = 8080; // PORT
 const STEAM_API_KEY = 'YOUR STEAM WEB API KEY';
 ```
-5. All API calls are located in the `"Routers"` folder. Same as below.
-6. It's similar to the Steam Web API, you only use methods and parameters, see below.
+5. All API are located in the `"api"` folder. Same as below.
+6. It's similar to the Steam Web API, you use methods, parameters or query, see below.
 7. Create request on client side.
 
 ### Request URL format
@@ -65,24 +65,28 @@ fetch(url)
   })
 ```
 
-## List of API CALLS
-Player:
+## List of API 
+ISteamUser:
 - `'/steam/GetPlayerSummaries/steamid'`
-
-- `'/steam/GetFriendList/steamid'`
-- `'/steam/GetPlayerAchievements/steamid/appid'`
-- `'/steam/GetOwnedGames/steamid'`
-- `'/steam/GetRecentlyPlayedGames/steamid'`
-- `'/steam/GetUserStatsForGame/steamid/:appid'`
+- `'/steam/ResolveVanityURL/vanityurl'`
 - `'/steam/GetPlayerBans/steamid'`
-- `'/steam/IsPlayingSharedGame/steamid/appid_playing'`
+- `'/steam/GetFriendList/steamid'`
 
-App:
-- `'/steam/GetNewsForApp/appid/?count=10&maxlength=300'`
-
-- `'/steam/GetGlobalAchievementPercentagesForApp/gameid'`
+ISteamUserStats:
 - `'/steam/GetSchemaForGame/appid'`
 - `'/steam/GetGlobalStatsForGame/appid/?count=1&name='avaiablegamestats'`  
+- `'/steam/GetPlayerAchievements/steamid/appid'`
+- `'/steam/GetGlobalAchievementPercentagesForApp/gameid'`
+- `'/steam/GetUserStatsForGame/steamid/:appid'`
+
+IPlayerService:
+- `'/steam/GetOwnedGames/steamid'`
+- `'/steam/GetRecentlyPlayedGames/steamid'`
+- `'/steam/IsPlayingSharedGame/steamid/appid_playing'`
+
+ISteamNews:
+- `'/steam/GetNewsForApp/appid/?count=10&maxlength=300'`
+
 #####  [*] TIP: use GetSchemaForGame to get availablegamestats
 
 ## License
