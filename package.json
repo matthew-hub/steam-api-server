@@ -4,6 +4,7 @@
   "description": "the server for \"steam api\" allows you to get data from request",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

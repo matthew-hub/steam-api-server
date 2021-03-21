@@ -3,8 +3,8 @@ const request = require("request");
 
 const app = express();
 
-const port = 8080; // PORT
-const STEAM_API_KEY = "77477B45984532B16B4D17249EE5C0EC";
+const port = 5000 ; // PORT
+const STEAM_API_KEY = process.env.STEAM_API_KEY;
 
 // recommend use 'express' and 'request'
 // steam api routers
@@ -15,7 +15,4 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-app.listen(port, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+app.listen(process.env.PORT || port);
