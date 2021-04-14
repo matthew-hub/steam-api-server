@@ -1,4 +1,3 @@
-
 const { createURL } = require('../utils/create-api-url');
 
 module.exports = (app, request, apikey) => {
@@ -15,12 +14,14 @@ module.exports = (app, request, apikey) => {
     // create the Steam API URL we want to use
     const url = createURL(req.params, apikey, req.query, req.originalUrl);
 
+    // eslint-disable-next-line consistent-return
     request.get(url, (error, steamHttpResponse) => {
+      res.setHeader('Content-Type', 'application/json');
+
       if (error) {
-        return res.send(error.code);
+        return res.send({ response: error.code, error: true });
       }
       // once we get the body of the steamHttpResponse, send it to our client
-      res.setHeader('Content-Type', 'application/json');
       res.send(steamHttpResponse.body);
     });
   });
@@ -28,15 +29,15 @@ module.exports = (app, request, apikey) => {
   app.get('/steam/:method/:id/:appid/', (req, res) => {
     // create the Steam API URL we want to use
     const url = createURL(req.params, apikey, req.query, req.originalUrl);
-
+    // eslint-disable-next-line consistent-return
     request.get(url, (error, steamHttpResponse) => {
+      res.setHeader('Content-Type', 'application/json');
+
       if (error) {
-        return res.send(error.code);
+        return res.send({ response: error.code, error: true });
       }
       // once we get the body of the steamHttpResponse, send it to our client
-      res.setHeader('Content-Type', 'application/json');
       res.send(steamHttpResponse.body);
     });
-    console.log('url_part', url);
   });
 };
