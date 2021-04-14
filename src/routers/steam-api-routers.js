@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable camelcase */
-
 const { createURL } = require('../utils/create-api-url');
 
 module.exports = (app, request, apikey) => {
@@ -18,6 +15,9 @@ module.exports = (app, request, apikey) => {
     const url = createURL(req.params, apikey, req.query, req.originalUrl);
 
     request.get(url, (error, steamHttpResponse) => {
+      if (error) {
+        return res.send(error.code);
+      }
       // once we get the body of the steamHttpResponse, send it to our client
       res.setHeader('Content-Type', 'application/json');
       res.send(steamHttpResponse.body);
@@ -29,10 +29,12 @@ module.exports = (app, request, apikey) => {
     const url = createURL(req.params, apikey, req.query, req.originalUrl);
 
     request.get(url, (error, steamHttpResponse) => {
+      if (error) {
+        return res.send(error.code);
+      }
       // once we get the body of the steamHttpResponse, send it to our client
       res.setHeader('Content-Type', 'application/json');
       res.send(steamHttpResponse.body);
     });
-    console.log('url_part', url);
   });
 };
